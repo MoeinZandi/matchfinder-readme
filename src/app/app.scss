@@ -1,0 +1,21 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+main {
+  position: relative;
+  overflow: hidden;
+}
+
+main::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle at 15% 10%, rgba(255, 59, 92, 0.08), transparent 28%),
+    radial-gradient(circle at 85% 35%, rgba(255, 59, 92, 0.05), transparent 25%);
+}
