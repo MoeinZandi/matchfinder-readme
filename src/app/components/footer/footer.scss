@@ -1,121 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700;800&display=swap');
+
 :host {
   display: block;
+  font-family: 'DM Sans', sans-serif;
 }
 
-.signature-footer {
-  position: relative;
-  padding: 45px 24px 28px;
-  background: #08080a;
-  color: #f7f4f5;
-  text-align: center;
-  overflow: hidden;
+.personal-footer {
+  background: #08080b;
+  border-top: 1px solid rgba(255, 45, 117, 0.25);
 }
 
-.footer-line {
-  width: min(1200px, 100%);
-  height: 1px;
-  margin: 0 auto 42px;
-  background: linear-gradient(90deg, transparent, #ff2d8d 35%, #ff303b 65%, transparent);
-  opacity: 0.8;
-}
-
-.signature-content {
+.footer-inner {
   display: flex;
   align-items: center;
-  flex-direction: column;
-}
-
-.footer-caption {
-  color: #aaa2aa;
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 3px;
+  justify-content: space-between;
+  gap: 28px;
+  width: min(1180px, calc(100% - 64px));
+  min-height: 100px;
+  margin: 0 auto;
 }
 
 .signature {
-  display: inline-block;
-  margin: 12px 0 20px;
-  color: #ff2d8d;
-  font-family: 'Brush Script MT', 'Segoe Script', cursive;
-  font-size: clamp(42px, 7vw, 68px);
-  font-weight: 500;
-  font-style: italic;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.signature-mark {
+  position: relative;
+  color: #fff;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -3px;
   line-height: 1.2;
-  letter-spacing: -2px;
-  text-decoration: none;
-  transform: rotate(-3deg);
-  transition:
-    color 0.2s,
-    transform 0.2s;
+
+  span {
+    color: #ff2d75;
+  }
+
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+    left: 0;
+    height: 3px;
+    content: '';
+    background: linear-gradient(90deg, #ff2d75, #e10600);
+    border-radius: 3px;
+    transform: skewX(-35deg);
+  }
 }
 
-.signature:hover {
-  color: #ff668c;
-  transform: rotate(-2deg) scale(1.04);
-}
-
-.signature-space {
-  display: inline-block;
-  width: 5px;
-}
-
-.signature-period {
-  color: #ff303b;
-}
-
-.signature-bottom {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 25px;
-  color: #817781;
-  font-size: 9px;
+.signature-name {
+  color: #ff5b98;
+  font-family: 'Caveat', cursive;
+  font-size: 34px;
   font-weight: 700;
-  letter-spacing: 1px;
+  transition: color 0.2s ease;
 }
 
-.footer-heart span {
-  color: #ff303b;
+.signature:hover .signature-name {
+  color: #ffb0cb;
 }
 
-.back-to-top {
-  position: absolute;
-  right: max(24px, calc((100% - 1200px) / 2));
-  bottom: 27px;
-  display: grid;
-  place-items: center;
-  width: 35px;
-  height: 35px;
-  border: 1px solid #49303e;
-  border-radius: 50%;
-  color: #ff2d8d;
-  text-decoration: none;
-  transition:
-    background 0.2s,
-    color 0.2s;
+.footer-credit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #99919f;
+  font-size: 13px;
+
+  a {
+    color: #f0e8f0;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #ff4b91;
+    }
+  }
 }
 
-.back-to-top:hover {
-  background: #ff2d8d;
-  color: white;
+.credit-line {
+  width: 30px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #ff2d75);
 }
 
-@media (max-width: 600px) {
-  .signature-footer {
-    padding: 35px 20px 25px;
+.credit-line:last-child {
+  transform: rotate(180deg);
+}
+
+.footer-year {
+  color: #8a8290;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .footer-inner {
+    width: calc(100% - 36px);
+    min-height: 90px;
+    gap: 16px;
   }
 
-  .footer-line {
-    margin-bottom: 32px;
+  .signature {
+    gap: 10px;
   }
 
-  .signature-bottom {
-    gap: 12px;
-    font-size: 8px;
+  .signature-mark {
+    font-size: 30px;
   }
 
-  .back-to-top {
-    position: static;
-    margin: 24px auto 0;
+  .signature-name {
+    font-size: 29px;
+  }
+
+  .footer-credit {
+    gap: 7px;
+    font-size: 11px;
+  }
+
+  .credit-line {
+    width: 16px;
+  }
+
+  .footer-year {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-inner {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 18px 0;
+    row-gap: 14px;
+  }
+
+  .signature-mark {
+    font-size: 28px;
+  }
+
+  .signature-name {
+    font-size: 27px;
+  }
+
+  .footer-credit {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    font-size: 12px;
+  }
+
+  .footer-year {
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signature-name,
+  .footer-credit a {
+    transition: none;
   }
 }
