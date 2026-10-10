@@ -1,0 +1,32 @@
+<div class="overlay" (click)="close()">
+  <section
+    class="dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="readme-title"
+    (click)="$event.stopPropagation()"
+  >
+    <button class="close" type="button" aria-label="Close dialog" (click)="close()">×</button>
+
+    <div class="warning-icon">!</div>
+
+    <div class="dialog-content">
+      <div class="eyebrow">PROJECT NOTICE / 01</div>
+      <h2 id="readme-title">A quick note<br />before you explore.</h2>
+
+      <p>
+        This website is a showcase of MatchFinder. For complete project details, setup instructions,
+        implementation notes, and documentation, please refer to the README in the repository.
+      </p>
+
+      <div class="dialog-actions">
+        <button type="button" class="confirm" (click)="close()">Got it <span>↗</span></button>
+        <a href="#preview" (click)="close()">Explore the project</a>
+      </div>
+    </div>
+
+    <div class="dialog-footer">
+      <span>MF / MATCHFINDER</span><span>THANK YOU FOR VISITING</span>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,24 @@
+<section class="technologies section" id="technologies">
+  <div class="tech-copy">
+    <div class="section-label">03 / THE TOOLKIT</div>
+    <h2>Built with a<br /><span>modern stack.</span></h2>
+    <p>
+      A focused technology stack supports a modular frontend, consistent styling, and clear
+      communication with application services.
+    </p>
+    <div class="tech-note"><span>✳</span> Maintainable by design</div>
+  </div>
+
+  <div class="tech-grid">
+    @for (tech of technologies; track tech.name) {
+      <article class="tech-card">
+        <span class="tech-mark" [class]="tech.className">{{ tech.mark }}</span>
+        <div>
+          <h3>{{ tech.name }}</h3>
+          <p>{{ tech.type }}</p>
+        </div>
+        <span class="tech-check">↗</span>
+      </article>
+    }
+  </div>
+</section>

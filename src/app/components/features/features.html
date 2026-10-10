@@ -1,0 +1,56 @@
+<section class="features-section" id="features">
+  <div class="section-container">
+    <div class="section-heading">
+      <span class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        WHAT MAKES IT DIFFERENT
+      </span>
+
+      <h2>
+        Features built for
+        <span class="gradient-text">connection.</span>
+      </h2>
+
+      <p class="section-description">Explore the key features behind the MatchFinder experience.</p>
+    </div>
+
+    <div class="features-grid">
+      @for (feature of features; track feature.number) {
+        <article class="feature-card">
+          <div class="card-top">
+            <span class="feature-number">{{ feature.number }}</span>
+
+            <span class="feature-icon" aria-hidden="true">
+              {{ feature.icon }}
+            </span>
+          </div>
+
+          <h3>{{ feature.title }}</h3>
+
+          <p class="feature-description">
+            {{ feature.description }}
+          </p>
+
+          <div class="feature-tags">
+            @for (tag of feature.tags; track tag) {
+              <span class="feature-tag">{{ tag }}</span>
+            }
+          </div>
+
+          <div class="card-accent"></div>
+        </article>
+      }
+    </div>
+
+    <div class="features-footer">
+      <span class="footer-line"></span>
+
+      <p>
+        Thoughtful design.
+        <strong>Meaningful connections.</strong>
+      </p>
+
+      <span class="footer-line"></span>
+    </div>
+  </div>
+</section>

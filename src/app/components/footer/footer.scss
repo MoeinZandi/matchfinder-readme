@@ -1,0 +1,121 @@
+:host {
+  display: block;
+}
+
+.signature-footer {
+  position: relative;
+  padding: 45px 24px 28px;
+  background: #08080a;
+  color: #f7f4f5;
+  text-align: center;
+  overflow: hidden;
+}
+
+.footer-line {
+  width: min(1200px, 100%);
+  height: 1px;
+  margin: 0 auto 42px;
+  background: linear-gradient(90deg, transparent, #ff2d8d 35%, #ff303b 65%, transparent);
+  opacity: 0.8;
+}
+
+.signature-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer-caption {
+  color: #aaa2aa;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.signature {
+  display: inline-block;
+  margin: 12px 0 20px;
+  color: #ff2d8d;
+  font-family: 'Brush Script MT', 'Segoe Script', cursive;
+  font-size: clamp(42px, 7vw, 68px);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.2;
+  letter-spacing: -2px;
+  text-decoration: none;
+  transform: rotate(-3deg);
+  transition:
+    color 0.2s,
+    transform 0.2s;
+}
+
+.signature:hover {
+  color: #ff668c;
+  transform: rotate(-2deg) scale(1.04);
+}
+
+.signature-space {
+  display: inline-block;
+  width: 5px;
+}
+
+.signature-period {
+  color: #ff303b;
+}
+
+.signature-bottom {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  color: #817781;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.footer-heart span {
+  color: #ff303b;
+}
+
+.back-to-top {
+  position: absolute;
+  right: max(24px, calc((100% - 1200px) / 2));
+  bottom: 27px;
+  display: grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  border: 1px solid #49303e;
+  border-radius: 50%;
+  color: #ff2d8d;
+  text-decoration: none;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.back-to-top:hover {
+  background: #ff2d8d;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .signature-footer {
+    padding: 35px 20px 25px;
+  }
+
+  .footer-line {
+    margin-bottom: 32px;
+  }
+
+  .signature-bottom {
+    gap: 12px;
+    font-size: 8px;
+  }
+
+  .back-to-top {
+    position: static;
+    margin: 24px auto 0;
+  }
+}

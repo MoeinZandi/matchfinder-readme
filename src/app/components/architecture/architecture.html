@@ -1,0 +1,48 @@
+<section class="architecture section" id="architecture">
+  <div class="section-label">UNDER THE HOOD</div>
+
+  <div class="architecture-heading">
+    <h2>Structure that<br /><span>scales with clarity.</span></h2>
+    <p>
+      A layered view of the application’s responsibilities. Adjust these descriptions to match your
+      implementation.
+    </p>
+  </div>
+
+  <div class="architecture-layout">
+    <div class="layers">
+      @for (layer of layers; track layer.number) {
+        <article class="layer">
+          <span class="layer-icon">{{ layer.icon }}</span>
+          <div class="layer-content">
+            <span class="layer-number">LAYER {{ layer.number }}</span>
+            <h3>{{ layer.title }}</h3>
+            <p>{{ layer.detail }}</p>
+          </div>
+          <span class="layer-arrow">↘</span>
+        </article>
+      }
+    </div>
+
+    <div class="diagram">
+      <div class="diagram-label">APPLICATION FLOW</div>
+      <div class="diagram-node primary-node">
+        <span>UI</span>
+        <div><strong>Angular</strong><small>Presentation layer</small></div>
+      </div>
+      <div class="connector"><span>↓</span></div>
+      <div class="diagram-node">
+        <span>SV</span>
+        <div><strong>Services</strong><small>Business logic</small></div>
+      </div>
+      <div class="connector"><span>↓</span></div>
+      <div class="diagram-node">
+        <span>API</span>
+        <div><strong>HTTP / API</strong><small>External data layer</small></div>
+      </div>
+      <div class="diagram-footer">
+        <span class="live-dot"></span> Modular structure · Clear responsibilities
+      </div>
+    </div>
+  </div>
+</section>

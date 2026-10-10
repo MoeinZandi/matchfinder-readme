@@ -1,0 +1,160 @@
+:host {
+  display: block;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: #050407d9;
+  backdrop-filter: blur(7px);
+  animation: fade-in 0.2s ease both;
+}
+
+.dialog {
+  position: relative;
+  width: min(510px, 100%);
+  padding: 38px;
+  background: #141418;
+  border: 1px solid #49303e;
+  border-radius: 10px;
+  box-shadow: 0 30px 100px #0009;
+  animation: rise-in 0.28s ease both;
+}
+
+.close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #49303e;
+  border-radius: 6px;
+  background: #1b1b21;
+  color: #aaa2aa;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #ff2d8d;
+  border-color: #ff2d8d;
+}
+
+.warning-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 24px;
+  border-radius: 9px;
+  background: #351719;
+  border: 1px solid #76242d;
+  color: #ff303b;
+  font-size: 27px;
+  font-weight: 900;
+}
+
+.eyebrow {
+  color: #ff2d8d;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 1.4px;
+}
+
+h2 {
+  margin: 13px 0 16px;
+  color: #f7f4f5;
+  font-size: clamp(29px, 5vw, 38px);
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+}
+
+.dialog-content > p {
+  color: #aaa2aa;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.dialog-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 26px;
+}
+
+.confirm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  min-width: 145px;
+  padding: 13px 16px;
+  border: 0;
+  border-radius: 6px;
+  background: #ff2d8d;
+  color: white;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.confirm:hover {
+  background: #e91f78;
+}
+.confirm span {
+  color: #ffd0e4;
+}
+.dialog-actions a {
+  color: #aaa2aa;
+  font-size: 11px;
+  text-decoration: none;
+}
+.dialog-actions a:hover {
+  color: #ff2d8d;
+}
+
+.dialog-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid #30252e;
+  color: #817781;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 450px) {
+  .dialog {
+    padding: 28px 22px;
+  }
+  .dialog-footer {
+    font-size: 7px;
+  }
+}

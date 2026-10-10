@@ -1,21 +1,32 @@
 :host {
+  --mf-bg: #0b0b0d;
+  --mf-surface: #141418;
+  --mf-surface-raised: #1b1b21;
+  --mf-text: #f7f4f5;
+  --mf-muted: #aaa2aa;
+  --mf-pink: #ff2d8d;
+  --mf-red: #ff303b;
+  --mf-border: #30252e;
+
   display: block;
   min-height: 100vh;
+  color: var(--mf-text);
+  background: var(--mf-bg);
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+}
+
+:host,
+:host * {
+  box-sizing: border-box;
 }
 
 main {
-  position: relative;
-  overflow: hidden;
+  width: min(1200px, calc(100% - 48px));
+  margin-inline: auto;
 }
 
-main::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -10;
-  pointer-events: none;
-
-  background:
-    radial-gradient(circle at 15% 10%, rgba(255, 59, 92, 0.08), transparent 28%),
-    radial-gradient(circle at 85% 35%, rgba(255, 59, 92, 0.05), transparent 25%);
+@media (max-width: 600px) {
+  main {
+    width: calc(100% - 32px);
+  }
 }
